@@ -1,6 +1,6 @@
 # BookingHub API
 
-[![CI](https://github.com/YOUR_GITHUB_USER/bookinghub-api/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GITHUB_USER/bookinghub-api/actions/workflows/ci.yml)
+[![CI](https://github.com/javas04/bookinghub-api/actions/workflows/ci.yml/badge.svg)](https://github.com/javas04/bookinghub-api/actions/workflows/ci.yml)
 ![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
 
 🇪🇸 [Leer en español](README.es.md)
@@ -66,7 +66,7 @@ tests/
 Requires the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USER/bookinghub-api.git
+git clone https://github.com/javas04/bookinghub-api.git
 cd bookinghub-api
 dotnet run --project src/BookingHub.Api
 ```
