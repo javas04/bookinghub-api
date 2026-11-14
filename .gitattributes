@@ -1,0 +1,7 @@
+# Normalize line endings in the repository (LF), checkout uses the platform default.
+* text=auto
+
+# Always LF: read by Linux tools in Docker and CI.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf

@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    image: bookinghub-api
+    ports:
+      - "8080:8080"
+    environment:
+      Jwt__SigningKey: ${JWT_SIGNING_KEY:?Set JWT_SIGNING_KEY in .env (at least 32 characters)}
+      Database__Seed__AdminEmail: ${ADMIN_EMAIL:-admin@bookinghub.local}
+      Database__Seed__AdminPassword: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
+      Database__Seed__SampleSpaces: "true"
+    volumes:
+      - bookinghub-data:/data
+    restart: unless-stopped
+
+volumes:
+  bookinghub-data:

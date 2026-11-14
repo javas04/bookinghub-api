@@ -1,0 +1,61 @@
+### BookingHub API - sample requests (Visual Studio / VS Code REST Client / Rider)
+# 1. Run the API (dotnet run --project src/BookingHub.Api)
+# 2. Send "Login as admin" and paste the accessToken into @token below.
+
+@baseUrl = http://localhost:5281
+@token = paste-access-token-here
+
+### Login as the seeded admin (Development only)
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@bookinghub.local",
+  "password": "Admin123!"
+}
+
+### Register a member
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "ana@example.com",
+  "fullName": "Ana García",
+  "password": "Secret123"
+}
+
+### Who am I?
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### List meeting rooms for at least 4 people
+GET {{baseUrl}}/api/spaces?type=MeetingRoom&minCapacity=4
+
+### Create a space (admin)
+POST {{baseUrl}}/api/spaces
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Nova",
+  "description": "Meeting room with a screen",
+  "type": "MeetingRoom",
+  "capacity": 6
+}
+
+### Book a space (replace the spaceId and pick a future date)
+POST {{baseUrl}}/api/bookings
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "spaceId": "00000000-0000-0000-0000-000000000000",
+  "startUtc": "2030-01-15T10:00:00Z",
+  "endUtc": "2030-01-15T11:00:00Z",
+  "attendees": 3,
+  "notes": "Sprint planning"
+}
+
+### My upcoming bookings
+GET {{baseUrl}}/api/bookings/me
+Authorization: Bearer {{token}}
