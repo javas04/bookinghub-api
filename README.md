@@ -9,6 +9,15 @@ A REST API for booking shared office spaces (meeting rooms, hot desks and phone 
 
 Members sign up, browse spaces, check availability and book time slots. The API rejects double bookings, bookings in the past, over-capacity bookings and other invalid requests. Admins manage the catalogue of spaces and can see every booking.
 
+## 🌐 Live demo
+
+**[bookinghub-api-6znt.onrender.com](https://bookinghub-api-6znt.onrender.com)**: interactive API docs (Scalar), ready to try.
+
+1. Open `POST /api/auth/register`, create an account and copy the `accessToken`.
+2. Click **Authentication**, paste the token, and try `GET /api/spaces` and `POST /api/bookings`.
+
+> Hosted on Render's free plan: after a period of inactivity the first request can take ~50 s while the service wakes up. Demo data is reset on every restart.
+
 ## Features
 
 - **JWT authentication** with role-based authorization (`Member`, `Admin`)
@@ -153,4 +162,4 @@ The integration tests start the real API in memory with `WebApplicationFactory`,
 - [ ] Recurring bookings
 - [ ] Opening hours and time zones per location
 - [ ] Email notifications (background worker + outbox)
-- [ ] Deploy a public demo
+- [x] Deploy a public demo (Render)

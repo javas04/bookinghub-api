@@ -9,6 +9,15 @@ API REST para reservar espacios de oficina compartidos (salas de reuniones, escr
 
 Los usuarios se registran, ven los espacios, consultan la disponibilidad y reservan franjas horarias. La API rechaza reservas solapadas, en el pasado, que superen el aforo y otras peticiones inválidas. Los administradores gestionan el catálogo de espacios y pueden ver todas las reservas.
 
+## 🌐 Demo en vivo
+
+**[bookinghub-api-6znt.onrender.com](https://bookinghub-api-6znt.onrender.com)**: documentación interactiva (Scalar), lista para probar.
+
+1. Abre `POST /api/auth/register`, crea una cuenta y copia el `accessToken`.
+2. Pulsa **Authentication**, pega el token y prueba `GET /api/spaces` y `POST /api/bookings`.
+
+> Está en el plan gratuito de Render: tras un rato sin uso, la primera petición puede tardar unos 50 s mientras el servicio se despierta. Los datos de demo se reinician en cada reinicio.
+
 ## Funcionalidades
 
 - **Autenticación JWT** con autorización por roles (`Member`, `Admin`)
@@ -102,4 +111,4 @@ Los tests de integración levantan la API real en memoria con `WebApplicationFac
 - [ ] Reservas recurrentes
 - [ ] Horarios de apertura y zonas horarias por sede
 - [ ] Notificaciones por email (worker en segundo plano + outbox)
-- [ ] Desplegar una demo pública
+- [x] Desplegar una demo pública (Render)
